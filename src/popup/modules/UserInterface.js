@@ -729,7 +729,7 @@ document.addEventListener('keydown', function(event) {
     }
 });
 
-export function zoomQrCode(zoom) {
+export function zoomQrCode() {
     if (zoom === true && qrLastSize < 440) {
         setNewQrCodeSize(qrLastSize + 30, true);
 
@@ -740,10 +740,15 @@ export function zoomQrCode(zoom) {
 
         localStorage.setItem("lastSize", qrLastSize);
     }
-
-    return qrLastSize;
 }
 
-export function getLastSize() {
+export function getLastSize(zoom) {
+    if (zoom === true && qrLastSize < 440) {
+        qrLastSize = qrLastSize + 30;
+    }
+    if (zoom === false && qrLastSize > 50) {
+        qrLastSize = qrLastSize - 30;
+    }
+
     return qrLastSize;
 }

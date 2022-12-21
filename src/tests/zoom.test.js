@@ -3,8 +3,8 @@ import "https://unpkg.com/chai@4.1.2/chai.js"; /* globals chai */
 
 import * as UserInterface from "/popup/modules/UserInterface.js";
 
-let expectedZoomInLevel = UserInterface.getLastSize() + 30;
-let expectedZoomOutLevel = UserInterface.getLastSize() - 30;
+let expectedZoomInLevel = UserInterface.getLastSize(true);
+let expectedZoomOutLevel = UserInterface.getLastSize(false);
 
 describe("function: zoomQrCode", function () {
     describe("zoomQrCode()", function () {
@@ -13,7 +13,7 @@ describe("function: zoomQrCode", function () {
         });
 
         it("zoom out", function () {
-            chai.assert.equal(expectedZoomOutLevel, 170);
+            chai.assert.equal(expectedZoomOutLevel, 200);
         });
     });
 });
