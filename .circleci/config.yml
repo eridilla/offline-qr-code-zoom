@@ -49,7 +49,7 @@ jobs:
       - run:
           name: Approval Complete
           command: |
-            echo 'The work is now complete.'
+            echo 'The work is now complete.a'
 
 workflows:
   Example-Workflow:
