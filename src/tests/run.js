@@ -7,6 +7,7 @@ import "/common/modules/RandomTips/tests/dataTest/tips.test.js";
 import "/common/modules/AddonSettings/tests/dataTest/defaultSettings.test.js";
 import "./colors.test.js";
 import "./iconHandler.test.js";
+import "./zoom.test.js";
 
 mocha.checkLeaks();
 mocha.run();

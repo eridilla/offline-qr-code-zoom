@@ -728,3 +728,22 @@ document.addEventListener('keydown', function(event) {
         localStorage.setItem("lastSize", qrLastSize);
     }
 });
+
+export function zoomQrCode(zoom) {
+    if (zoom === true && qrLastSize < 440) {
+        setNewQrCodeSize(qrLastSize + 30, true);
+
+        localStorage.setItem("lastSize", qrLastSize);
+    }
+    if (zoom === false && qrLastSize > 50) {
+        setNewQrCodeSize(qrLastSize - 30, true);
+
+        localStorage.setItem("lastSize", qrLastSize);
+    }
+
+    return qrLastSize;
+}
+
+export function getLastSize() {
+    return qrLastSize;
+}
